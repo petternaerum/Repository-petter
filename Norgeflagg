@@ -1,0 +1,13 @@
+bakgrunn = rectangle(440,320, "solid","red")
+blue1 = rectangle(440, 40, "solid", "blue")
+blue2 = rectangle(40, 320, "solid", "blue")
+white1 = rectangle(440, 80, "solid", "white")
+white2 = rectangle(80, 440, "solid", "white")
+
+put-image(blue2, 150, 160,
+  put-image(blue1, 220, 160,
+    put-image(white1, 220, 160,
+      put-image(white2, 150,220,
+        bakgrunn))))
+
+    
