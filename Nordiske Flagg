@@ -1,0 +1,67 @@
+fun No() -> Image:
+bakgrunn = rectangle(440,320, "solid","red")
+blue1 = rectangle(440, 40, "solid", "blue")
+blue2 = rectangle(40, 320, "solid", "blue")
+white1 = rectangle(440, 80, "solid", "white")
+white2 = rectangle(80, 440, "solid", "white")
+
+put-image(blue2, 150, 160,
+  put-image(blue1, 220, 160,
+    put-image(white1, 220, 160,
+      put-image(white2, 150,220,
+        bakgrunn))))
+end
+
+fun Fa() -> Image:
+  bakgrunn = rectangle(440,320, "solid","white")
+  blue1 = rectangle(440, 40, "solid", "red")
+  blue2 = rectangle(40, 320, "solid", "red")
+  white1 = rectangle(440, 80, "solid", "blue")
+  white2 = rectangle(80, 440, "solid", "blue")
+
+put-image(blue2, 150, 160,
+  put-image(blue1, 220, 160,
+    put-image(white1, 220, 160,
+      put-image(white2, 150,220,
+        bakgrunn))))
+end
+
+fun Da() -> Image:
+  bakgrunn = rectangle(440,320, "solid","crimson")
+  blue1 = rectangle(440, 40, "solid", "white")
+  blue2 = rectangle(40, 320, "solid", "white")
+  white1 = rectangle(440, 80, "solid", "crimson")
+  white2 = rectangle(80, 440, "solid", "crimson")
+
+put-image(blue2, 150, 160,
+  put-image(blue1, 220, 160,
+    put-image(white1, 220, 160,
+      put-image(white2, 150,220,
+        bakgrunn))))
+end
+fun Fi() -> Image:
+  bakgrunn = rectangle(440,320, "solid","white")
+  blue1 = rectangle(440, 40, "solid", "navy")
+  blue2 = rectangle(40, 320, "solid", "navy")
+  white1 = rectangle(440, 80, "solid", "navy")
+  white2 = rectangle(80, 440, "solid", "navy")
+
+put-image(blue2, 150, 160,
+  put-image(blue1, 220, 160,
+    put-image(white1, 220, 160,
+      put-image(white2, 150,220,
+        bakgrunn))))
+end
+fun Sv() -> Image:
+bakgrunn = rectangle(440,320, "solid","steel-blue")
+  blue1 = rectangle(440, 40, "solid", "gold")
+  blue2 = rectangle(40, 320, "solid", "gold")
+white1 = rectangle(440, 80, "solid", "steel-blue")
+white2 = rectangle(80, 440, "solid", "steel-blue")
+
+put-image(blue2, 150, 160,
+  put-image(blue1, 220, 160,
+    put-image(white1, 220, 160,
+      put-image(white2, 150,220,
+        bakgrunn))))
+end
