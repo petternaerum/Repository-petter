@@ -37,8 +37,45 @@ Energiforbruk = sum(tabell-tall, "energi")
 
 print(Energiforbruk)
 
-#e
+fun bil(): 
+  energy-per-day = ((50/10) * (10))
+  energy-per-day
+end
+
+bil()
+
+fun add-bil(value :: Number) -> Number:
+  if value == 0:
+    bil()
+  else:
+    value
+  end
+end
+
+#Sliter med å plassere bil inn i tabellen
+
+fun sum-energi():
+  t = transform-column(kWh-wealthy-consumer-data, "energi", energi-to-number)
+  sum(t, "energi")
+end
+sum-energi() + bil()
+
+
 bar-chart(tabell-tall, "komponent", "energi")
 
+#lager en ny tabell med ny verdi på "bil"
+new-table = table: komponent :: String, energi :: Number
+  row: "bil", 25 
+  row: "fly", 30
+  row: "ovnk", 37
+  row: "lys", 5 
+  row: "dingser", 4 
+  row: "mlk", 15
+  row: "varer", 48 
+  row: "varetransport", 12
+  row: "offtjen", 4
+end
 
+bar-chart(new-table, "komponent", "energi")
 
+    
