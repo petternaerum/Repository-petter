@@ -15,15 +15,20 @@ source: load-spreadsheet(ssid).sheet-by-name("kWh", true)
   end
 #b
 kWh-wealthy-consumer-data
+distance-traveled-pd = 30
+distance-puf = 12
+energy-puf = 10
+
+energy-used-pd = (distance-traveled-pd / distance-puf) * energy-puf
+
 fun energi-to-number(s :: String) -> Number:
   doc: "If s is not a numeric string, default to 0."
   cases(Option) string-to-number(s):
     | some(a) => a
-    | none => 0
+    | none => energy-used-pd
   end
 where:
   energi-to-number("30") is 30
-  energi-to-number("") is 0
 energi-to-number("48") is 48
 end
 
@@ -37,45 +42,5 @@ Energiforbruk = sum(tabell-tall, "energi")
 
 print(Energiforbruk)
 
-fun bil(): 
-  energy-per-day = ((50/10) * (10))
-  energy-per-day
-end
-
-bil()
-
-fun add-bil(value :: Number) -> Number:
-  if value == 0:
-    bil()
-  else:
-    value
-  end
-end
-
-#Sliter med å plassere bil inn i tabellen
-
-fun sum-energi():
-  t = transform-column(kWh-wealthy-consumer-data, "energi", energi-to-number)
-  sum(t, "energi")
-end
-sum-energi() + bil()
-
-
-bar-chart(tabell-tall, "komponent", "energi")
-
-#lager en ny tabell med ny verdi på "bil"
-new-table = table: komponent :: String, energi :: Number
-  row: "bil", 25 
-  row: "fly", 30
-  row: "ovnk", 37
-  row: "lys", 5 
-  row: "dingser", 4 
-  row: "mlk", 15
-  row: "varer", 48 
-  row: "varetransport", 12
-  row: "offtjen", 4
-end
-
-bar-chart(new-table, "komponent", "energi")
 
     
