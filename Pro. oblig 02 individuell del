@@ -1,0 +1,44 @@
+#b
+include option
+include shared-gdrive(
+"dcic-2021",
+"1wyQZj_L0qqV9Ekgr9au6RX2iqt2Ga8Ep")
+
+#a
+include gdrive-sheets
+include data-source
+ssid = "1RYN0i4Zx_UETVuYacgaGfnFcv4l9zd9toQTTdkQkj7g"
+kWh-wealthy-consumer-data =
+load-table: komponent, energi
+source: load-spreadsheet(ssid).sheet-by-name("kWh", true)
+    sanitize energi using string-sanitizer
+  end
+#b
+kWh-wealthy-consumer-data
+fun energi-to-number(s :: String) -> Number:
+  doc: "If s is not a numeric string, default to 0."
+  cases(Option) string-to-number(s):
+    | some(a) => a
+    | none => 0
+  end
+where:
+  energi-to-number("30") is 30
+  energi-to-number("") is 0
+energi-to-number("48") is 48
+end
+
+#C
+tabell-tall = transform-column(kWh-wealthy-consumer-data, "energi",energi-to-number)
+
+print(tabell-tall)
+
+#d
+Energiforbruk = sum(tabell-tall, "energi")
+
+print(Energiforbruk)
+
+#e
+bar-chart(tabell-tall, "komponent", "energi")
+
+
+
