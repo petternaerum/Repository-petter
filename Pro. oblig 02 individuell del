@@ -43,4 +43,7 @@ Energiforbruk = sum(tabell-tall, "energi")
 print(Energiforbruk)
 
 
+#e
+bar-chart(tabell-tall, "komponent", "energi")
+
     
