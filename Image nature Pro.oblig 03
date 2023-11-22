@@ -1,0 +1,30 @@
+##definere## 
+bakgrunn= rectangle(450, 450, "solid", "dark-turquoise")
+sol1= circle(100, "solid", "dark-orange")
+sol2= circle(90,"solid", "tomato")
+sol3= circle(75, "solid", "orange-red")
+sandm= rectangle(700, 125, "solid", "goldenrod")
+sandl= rectangle(700, 100, "solid", "navajo-white")
+vannl= rectangle(700, 205, "solid", "light-sky-blue")
+vannm= rectangle(700, 230, "solid", "cornflower-blue")
+vannmm= rectangle(700, 250, "solid", "dodger-blue")
+sky1= circle(17, "solid", "white")
+sky2= circle(17, "solid", "white")
+sky3= circle(17, "solid", "white")
+sky4= circle(17, "solid", "white")
+ramme= rectangle(455, 455, "solid", "black")
+
+##put image##
+put-image(sky1, 120, 375, 
+  put-image(sky2, 100, 375,
+    put-image(sky3, 105, 360,
+      put-image(sky4, 125, 360,
+        put-image(sandm, 100, 20,
+          put-image(sandl, 100, 110,
+            put-image(vannl, 100, 110,
+              put-image(vannm, 100, 125,
+                put-image(vannmm, 100, 150, 
+                  put-image(sol3, 325,340, 
+                    put-image(sol2, 325,340,
+                      put-image(sol1, 325,340,
+                        bakgrunn))))))))))))
